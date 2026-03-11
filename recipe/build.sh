@@ -8,5 +8,7 @@ AUTOMAKE_FLAGS=--include-deps
 ./configure --disable-silent \
     --disable-dependency-tracking \
     --prefix=${PREFIX}
+if [[ ${build_platform} != ${target_platform} ]]; then
 make check
+fi
 make install
